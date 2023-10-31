@@ -12,17 +12,17 @@ const SortableImg = ({ imgSrc, index, id }) => {
     }
 
     return (
-        <>
+        <div
+            ref={setNodeRef}
+            {...attributes}
+            {...listeners}
+            style={style}
+            className={`${index === 0 && "col-span-2 row-span-2"} w-full h-full bg-white border border-zinc-300 rounded-md z-10 touch-none`}>
             <img
-                ref={setNodeRef}
-                {...attributes}
-                {...listeners}
-                style={style}
                 src={imgSrc}
                 alt="Product Images"
-                className={`${index === 0 ? "col-span-2 row-span-2" : ""} bg-white border border-zinc-300 rounded-md z-10`}
             />
-        </>
+        </div>
     );
 };
 

@@ -51,8 +51,13 @@ const Gallery = () => {
 
                 {/* grid gallery */}
                 <div className="p-2 sm:p-4 md:p-8">
-                    <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd} onDragStart={onDragStart}>
-                        <SortableContext items={images} strategy={rectSortingStrategy}>
+                    <DndContext
+                        collisionDetection={closestCenter}
+                        onDragStart={onDragStart}
+                        onDragEnd={onDragEnd}>
+                        <SortableContext 
+                        items={images} 
+                        strategy={rectSortingStrategy}>
 
                             {/* grid gallery */}
                             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -72,7 +77,7 @@ const Gallery = () => {
                         <DragOverlay zIndex={0}>
                             {
                                 activeImageCard &&
-                                <div className="bg-zinc-50 border border-zinc-300 rounded-md w-full h-full">
+                                <div className="bg-zinc-50 border border-zinc-300 rounded-md w-full h-full hidden md:block">
                                 </div>
                             }
                         </DragOverlay>
